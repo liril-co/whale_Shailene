@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="view port" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+    <title>
+        Vídeos | Shailene Diann Woodley | liril
+    </title>
+    <link rel="shortcut icon" type="image/ico" href="/resources/icons/favicon.ico" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/user/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/video-js.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/resources/blue.monday/css/jplayer.blue.monday.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/imgStatic/style.css" />
+    <script type="text/javascript">
+        var username = "whale_Shailene";
+        var users_name = "Shailene Diann Woodley";
+    </script>
+    <script src="/js/user/modernizr.custom.js"></script>
+    <script src="/js/jquery.js"></script>
+    <!--<script type="text/javascript" src= "js/jquery.circlemouse.js"></script> //Thanks to Mary Lou from Codrops, this helped me a lot!-->
+    <script src="/js/user/main.js"></script>
+    <script src="/js/jquery.dotdotdot.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+    <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/js/jquery.textarea_autosize.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.knob.js"></script>
+    <script src="/js/video.js"></script>
+    <script src="/js/audio.min.js"></script>
+    <script src="/js/imgStatic/main.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $.widget("ui.tooltip", $.ui.tooltip, {
+                options: {
+                    content: function() {
+                        return $(this).prop('title');
+                    }
+                }
+            });
+
+            $('.username').tooltip({
+                items: 'a.target',
+                open: function(event, ui) {
+                    if (typeof(event.originalEvent) === 'undefined') {
+                        return false;
+                    }
+                    $(".knob").knob();
+                    var $id = $(ui.tooltip).attr('id');
+
+                    // close any lingering tooltips
+                    $('div.ui-tooltip').not('#' + $id).remove();
+
+                    // ajax function to pull in data and add it to the tooltip goes here
+                },
+                close: function(event, ui) {
+                    ui.tooltip.hover(function() {
+                            $(this).stop(true).fadeTo(400, 1);
+                        },
+                        function() {
+                            $(this).fadeOut('400', function() {
+                                $(this).remove();
+                            });
+                        });
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function ($) {
+
+            $(".knob").knob({
+                change: function (value) {
+                    //console.log("change : " + value);
+                },
+                release: function (value) {
+                    //console.log(this.$.attr('value'));
+                    console.log("release : " + value);
+                },
+                cancel: function () {
+                    console.log("cancel : ", this);
+                },
+                /*format : function (value) {
+                  return value + '%';
+                  }
+                  ,*/
+                draw: function () {
+
+                    // "tron" case
+                    if (this.$.data('skin') == 'tron') {
+
+                        this.cursorExt = 0.3;
+
+                        var a = this.arc(this.cv) // Arc
+                            ,
+                            pa // Previous arc
+                            , r = 1;
+
+                        this.g.lineWidth = this.lineWidth;
+
+                        if (this.o.displayPrevious) {
+                            pa = this.arc(this.v);
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.pColor;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                            this.g.stroke();
+                        }
+
+                        this.g.beginPath();
+                        this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                        this.g.stroke();
+
+                        this.g.lineWidth = 2;
+                        this.g.beginPath();
+                        this.g.strokeStyle = this.o.fgColor;
+                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                        this.g.stroke();
+
+                        return false;
+                    }
+                }
+            });
+
+            // Example of infinite knob, iPod click wheel
+            var v, up = 0,
+                down = 0,
+                i = 0,
+                $idir = $("div.idir"),
+                $ival = $("div.ival"),
+                incr = function () {
+                    i++;
+                    $idir.show().html("+").fadeOut();
+                    $ival.html(i);
+                },
+                decr = function () {
+                    i--;
+                    $idir.show().html("-").fadeOut();
+                    $ival.html(i);
+                };
+            $("input.infinite").knob({
+                min: 0,
+                max: 20,
+                stopper: false,
+                change: function () {
+                    if (v > this.cv) {
+                        if (up) {
+                            decr();
+                            up = 0;
+                        } else {
+                            up = 1;
+                            down = 0;
+                        }
+                    } else {
+                        if (v < this.cv) {
+                            if (down) {
+                                incr();
+                                down = 0;
+                            } else {
+                                down = 1;
+                                up = 0;
+                            }
+                        }
+                    }
+                    v = this.cv;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li id="index">
+                    <a href="/">
+                        <section id="index-trigger">
+                            <span class="back-arrow button">
+                            </span>
+                            <span id="index-text" class="text button">
+                                Inicio
+                            </span>
+                        </section>
+                    </a>
+                </li>
+                <li id="buscar">
+                    <input class="buscar" type="text" placeholder="Busca aquí cursos, personas o cualquier cosa">
+                </li>
+                <li id="right-menu" class="button">
+                    <section id="dots" class="button">
+                        <span id="store" class="button">
+                        </span>
+                        <span id="dots-icon" class="button">
+                        </span>
+                        <span id="dots-text" class="button">
+                            6'000.600
+                        </span>
+                    </section>
+                    <section id="profileTrigger">
+                    </section>
+                    <div id="profile" class="button">
+                        <img id="profile-pic" src="/resources/images/white.jpg" alt="Walter White">
+                        <input class="knob button" data-width="35" data-height="35" data-fgColor="#2ecc71" data-bgColor="rgba(0,0,0,0)" data-displayInput=false data-thickness=".15" readonly value="60">
+                    </div>
+                    <span class="index-arrow button">
+                    </span>
+                    <section id="profileSettings">
+                    </section>
+                </li>
+                <li>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="wrapper" class="theater"></section>
+    <style class="zer">
+    </style>
+    <aside id="biography">
+        <section id="content">
+            <section id="theater" class="theater animated fadeIn" style="display: block;">
+                <section>
+                    <section id="picContainer">
+                        <section class="navigation">
+                            <div class="nav_arrow left disabled">
+                                <div class="arrow"></div>
+                            </div>
+                            <div class="nav_arrow right">
+                                <div class="arrow"></div>
+                            </div>
+                            <section class="carr exT">
+                                <section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "afBGp3Uunf" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/afBGp3Uunf_poster.png"}' data-setup="{}"><source src= "https://ia903208.us.archive.org/6/items/SherlockHolmes1954/Sherlock%20Holmes%2001%20The%20Case%20of%20the%20Cunningham%20Heritage.mp4"  type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "JwJSb3SeBh" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/JwJSb3SeBh_poster.png"}' data-setup="{}"><source src= "https://ia903208.us.archive.org/6/items/SherlockHolmes1954/Sherlock%20Holmes%2002%20The%20Case%20Of%20Lady%20Beryl.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "1vIgYDTGnG" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/1vIgYDTGnG_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2003%20The%20Case%20of%20the%20Pennsylvania%20Gun.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "M0Xpd2I9TY" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/M0Xpd2I9TY_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2004%20The%20Case%20Of%20The%20Texas%20Cowgirl.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "qEjJTFsyCC" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/qEjJTFsyCC_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2005%20The%20Case%20Of%20The%20Belligerent%20Ghost.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "Pa7qPkFjM4" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/Pa7qPkFjM4_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2006%20The%20Case%20Of%20The%20Shy%20Ballerina.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "UXrGJCShYN" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/UXrGJCShYN_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2007%20The%20Case%20Of%20The%20Winthrop%20Legend.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "lYROvAIS4M" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/lYROvAIS4M_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2008%20The%20Case%20Of%20The%20Blind%20Man%27s%20Bluff.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "jkPNX7KiXW" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/jkPNX7KiXW_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2009%20The%20Case%20Of%20Harry%20Crocker.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "TkoZt3rwIi" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/TkoZt3rwIi_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2010%20Mother%20Hubbard.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "5uejj48YQi" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/5uejj48YQi_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2011%20Red%20Headed%20League.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "N0qNAL5EM0" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/N0qNAL5EM0_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2012%20Shoeless%20Engineer.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "JS8C83z0Fy" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/JS8C83z0Fy_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2013%20Split%20Ticket.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "KXr7DRAlyW" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/KXr7DRAlyW_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2014%20French%20Interpreter.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "C7u5dJYMD1" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/C7u5dJYMD1_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2015%20Singing%20Violin.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "98DyA99hye" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/98DyA99hye_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2016%20The%20Case%20Of%20The%20Greystone%20Insription.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "sm1dQCUFwD" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/sm1dQCUFwD_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2017%20The%20Case%20Of%20The%20Laughing%20Mummy.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "8Oe2gyTwDk" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/8Oe2gyTwDk_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2018%20The%20Case%20Of%20The%20Thistle%20Killer.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "yXFMeyjQ7f" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/yXFMeyjQ7f_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2019%20The%20Case%20Of%20The%20Vanished%20Detective.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "Y0IHpMRpHU" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/Y0IHpMRpHU_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2020%20The%20Case%20Of%20The%20Careless%20Suffragette.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "JZ45FsXoyJ" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/JZ45FsXoyJ_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2021%20The%20Case%20Of%20The%20Reluctant%20Carpenter.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "bS0U1ElxVs" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/bS0U1ElxVs_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2022%20The%20Case%20Of%20The%20Deadly%20Prophecy.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "62fupY4YWY" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/62fupY4YWY_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2023%20The%20Case%20Of%20The%20Deadly%20Pudding.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "255dimYodr" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/255dimYodr_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2024%20The%20Case%20Of%20The%20Night%20Train%20Riddle.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "dan08n3GFl" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/dan08n3GFl_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2025%20The%20Case%20Of%20The%20Violent%20Suitor.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "DT689cFSMF" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/DT689cFSMF_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2026%20The%20Case%20Of%20The%20Baker%20Street%20Nursemaids.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "43u8Mt5stv" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/43u8Mt5stv_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2027%20The%20Case%20Of%20The%20Perfect%20Husband.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "vgBpZ8C1gK" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/vgBpZ8C1gK_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2028%20The%20Case%20Of%20The%20Jolly%20Hangman.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "3zPmYIv97j" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/3zPmYIv97j_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2029%20The%20Case%20Of%20The%20Impostor%20Mystery.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "XXk2zWQMoU" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/XXk2zWQMoU_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2030%20The%20Case%20Of%20The%20Eiffel%20Tower.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "ip2JohmYsO" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/ip2JohmYsO_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2031%20The%20Case%20Of%20The%20Exhumed%20Client.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "ZuvOPI2dYg" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/ZuvOPI2dYg_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2032%20The%20Case%20Of%20The%20Impromptu%20Performance.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "PdDpigwXwS" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/PdDpigwXwS_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2033%20The%20Case%20of%20the%20Baker%20Street%20Bachelors.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "wzhQMFeLF9" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/wzhQMFeLF9_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2034%20The%20Case%20of%20the%20Royal%20Murder.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "jPWa9zPBXZ" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/jPWa9zPBXZ_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2035%20The%20Case%20of%20the%20Haunted%20Gainsborough.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "5zRK1Kyitn" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/5zRK1Kyitn_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2036%20The%20Case%20of%20the%20Neurotic%20Detective.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "XMJ0BGabS4" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/XMJ0BGabS4_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2037%20The%20Case%20of%20the%20Unlucky%20Gambler.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "DbL4SdVKLp" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/DbL4SdVKLp_poster.png"}' data-setup="{}"><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2038%20The%20Case%20of%20the%20Diamond%20Tooth.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+<section class="video">
+                                    <div class="Playuse">
+                                    </div>
+                                    <div class="Enlarge">
+                                    </div>
+                                    <video id= "b7ZDgCyqG1" controls class="video-js d88fer vjs-default-skin" preload="none" width="100%" height="100%" data-setup='{"poster": "/resources/images/whale_Shailene/b7ZDgCyqG1_poster.png"}]]},'><source src= "https://archive.org/download/SherlockHolmes1954/Sherlock%20Holmes%2039%20The%20Case%20of%20the%20Tyrant%27s%20Daughter.mp4" type='video/mp4' />
+                                        <p class="vjs-no-js">
+                                            Para ver este vídeo, por favor activa el Javascript y considera actualizar tu navegador a uno que
+                                            <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                                soporte vídeo en Html5
+                                            </a>
+                                        </p>
+                                    </video>
+                                </section>
+
+                            </section>
+                        </section>
+                    </section>
+                    <aside class="comments">
+                        <div class="info">
+                            <input class='knob button' data-width='47' data-height='47' data-fgColor='#2ecc71' data-bgColor='rgba(0,0,0,0)' data-displayInput=false data-thickness='.12' readonly value='94'>
+                                    <img src="/resources/images/whale_Shailene/RKRWeNhDgJ_tn.jpg" alt="">
+                            <p class="username"><a class="target" href="/whale_Shailene" title="         
+              <div class='tool'>
+                <input class='knob button' data-width='102' data-height='102' data-fgColor='#2ecc71' data-bgColor='rgba(0,0,0,0)' data-displayInput=false data-thickness='.08' readonly value='98'>
+                <img src='/resources/images/whale_Shailene/RKRWeNhDgJ_tn.jpg'>
+                <div class='datos'>
+                  <ul class='actions'>
+                    <li class='chatear' title='Chatear'>C</li>
+                    <li class='agregar' title='Agregar'>A</li>
+                    <li class='juzgar' title='Juzgar'>J</li>
+                  </ul>
+                  <p class='username' title= 'whale_Shailene'>Shailene Diann Woodley</p>
+                  <p class='rol'>SEO <b style='color:#fff;'>+98</b></p>
+                </div>
+            </div>">Shailene Diann Woodley</a><br><span title="2 de Diciembre de 2022 a las 6:9 pm" class="time">2 de Diciembre a las 6:9 pm</span></p>
+                        </div>
+                        <div class="description" style="padding-top: 76px;">
+                            <p class="title">
+                            </p>
+                            <p class="more">
+                            </p>
+                        </div>
+                        <div class="comentarios">
+                            <div class="Comentarios">
+                            </div>
+                            <div class="newComment">
+                                <textarea rows="1"></textarea>
+                            </div>
+                        </div>
+                        <div class="options button">
+                            <ul>
+                                <li class="bookmark" title=""></li>
+                                <li class="star" title=""></li>
+                                <a>
+                                    <li class="read" title=""></li>
+                                </a>
+                            </ul>
+                        </div>
+                        <!--<p id="close"></p>
+            </aside>-->
+                </section>
+            </section>
+            <section id="main">
+                <aside id="sidebar">
+                    <div id="container">
+                        <div id="resizeTop">
+                            <div id="notifications">
+                                <ul>
+                                    <div class="info button">
+                                        <img src="/resources/images/A.K.A._Dizzy/4uHf7tgk8C_tn.jpg" alt="">
+                                        <p class="username"><b href="#">A.K.A._Dizzy:</b> <br> 😉 Revisen Mi Perfil: <a target="_blank" href="/A.K.A._Dizzy">A.K.A._Dizzy</a></p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora amigo de Walter White.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> hizo un commit a eBay.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora Moderador.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora amigo de Walter White.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> hizo un commit a eBay.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora Moderador.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora amigo de Walter White.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> hizo un commit a eBay.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora Moderador.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora amigo de Walter White.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> hizo un commit a eBay.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora Moderador.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> Es ahora amigo de Walter White.</p>
+                                    </div>
+                                    <div class="info button">
+                                        <img src="/resources/images/white.jpg" alt="">
+                                        <p class="username"><b href="#">Walter White</b> hizo un commit a eBay.</p>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="resizeBottom">
+                            <div id="chat">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="search">
+                        <i id="searchIcon"></i>
+                        <input type="text" placeholder="Buscar">
+                    </section>
+                </aside>
+                <section id="Store" class="button">
+                    <aside id="actualStore" class="button">
+                        <aside id="storeList" class="button">
+                            <ul>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                                <a>
+                                    <li class="button">Sección</li>
+                                </a>
+                            </ul>
+                        </aside>
+                        <aside id="storeSection">
+                        </aside>
+                    </aside>
+                </section>
+                <section id="chats">
+                    <div class="chats">
+                    </div>
+                </section>
+                <script>
+                    $("#notifications").mCustomScrollbar({theme: 
+        "minimal-dark", 
+        autoExpandScrollbar: true,
+        scrollInertia: 100,
+         mouseWheel:{ scrollAmount: 40 }
+
+    });
+      $("#chat").mCustomScrollbar({theme: 
+        "minimal-dark", 
+        autoExpandScrollbar: true,
+        scrollInertia: 100,
+            mouseWheel:{ scrollAmount: 40 }
+
+             });
+      $(".more").mCustomScrollbar({theme: 
+        "minimal-dark", 
+        autoExpandScrollbar: true,
+        scrollInertia: 100});
+    </script>
+                <script>
+                    $( "#resizeBottom" ).resizable({ handles: "n",maxHeight: ($(window).height()-$("#sidebar #search").outerHeight() - 51),minHeight: 50 }).bind("resize", function (e, ui) {
+            $(this).css("top", "auto");
+            
+        });
+
+    $(".line").tooltip({      
+        track: true,
+        position: {
+        my: "center bottom-6",
+        at: "center top"
+      }
+});
+
+    </script>
+                <style type="text/css">
+                    #theater_video {
+                        display: block !important;
+                    }
+
+                    body #theater .Playuse {
+                        display: block;
+                    }
+
+                    #bigPic {
+                        display: none !important;
+                    }
+                </style>
+                <script>
+                    $(".story .info").height($(this).find(".username").outerHeight())
+                </script>
+                <script>
+                    audiojs.events.ready(function() {
+                        var as = audiojs.createAll();
+                    });
+                </script>
+</body>
+
+</html>
