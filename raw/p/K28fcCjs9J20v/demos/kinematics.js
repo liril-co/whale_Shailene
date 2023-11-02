@@ -98,7 +98,9 @@ function vehicle ( id, pos, shapeType ) {
 
 };
 var recTangle_info= [
-    {pic: "https://i.huffpost.com/gen/1693767/images/o-BURNING-MONEY-facebook.jpg", title: "Cabos sueltos", description: "Una forma muy costosa (200) de perder tu turno (vuelves a donde estabas antes).", price: 200},
+    {pic: "https://i.huffpost.com/gen/1693767/images/o-BURNING-MONEY-facebook.jpg", title: "Cabos sueltos", description: "Una forma muy costosa (200) de perder tu turno (vuelves a donde estabas antes).", price: 200, funcTion: function(){
+        chaR(activeChar).posiTion= chaR(activeChar).previys_posiTion
+    }},
     {pic: "https://i.pinimg.com/originals/84/b7/c7/84b7c7fb7d548d5e65f271c5a70b0d00.jpg", title: "Desterrado", description: "Te van a desterrar por dos turnos a menos de que pagues.", price: 23, funcTion: function(){
 
     }, re_fusTion: function(){
@@ -299,7 +301,7 @@ function Yoch_fordM( o ){
             info.show(recTangle_info[parseInt(o.name.slice(9))])
         }
         oldColor= {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}
-        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion){
+        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion && !chaR(activeChar).thRowing){
             active_recTangle= parseInt(o.name.slice(9));
             view.getScene().getObjectByName(o.name).material.color= {r:0.3,g:1,b:0.3}
         }else{
@@ -311,6 +313,11 @@ function Yoch_fordM( o ){
         active_recTangle= null;
         delete oldColor
         info.clear()
+    }
+    if(0==o.name.indexOf("recTangle") && chaR(activeChar).thRowing){
+        oldColor= "undefined"==typeof oldColor? {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}: oldColor
+        view.getScene().getObjectByName(o.name).material.color= {r:0.5,g:0.5,b:0.5}
+        active_recTangle= null;
     }
 } 
 function Yoch_vaz( o ){
@@ -321,7 +328,7 @@ function Yoch_vaz( o ){
             info.show(recTangle_info[parseInt(o.name.slice(9))])
         }
         oldColor= {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}
-        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion){
+        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion && !chaR(activeChar).thRowing){
             active_recTangle= parseInt(o.name.slice(9));
             view.getScene().getObjectByName(o.name).material.color= {r:0.3,g:1,b:0.3}
         }else{
@@ -333,6 +340,11 @@ function Yoch_vaz( o ){
         active_recTangle= null;
         delete oldColor
         info.clear()
+    }
+    if(0==o.name.indexOf("recTangle") && chaR(activeChar).thRowing){
+        oldColor= "undefined"==typeof oldColor? {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}: oldColor
+        view.getScene().getObjectByName(o.name).material.color= {r:0.5,g:0.5,b:0.5}
+        active_recTangle= null;
     }
 }
 function Yoch_coupe( o ){
@@ -343,7 +355,7 @@ function Yoch_coupe( o ){
             info.show(recTangle_info[parseInt(o.name.slice(9))])
         }
         oldColor= {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}
-        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion){
+        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion && !chaR(activeChar).thRowing){
             active_recTangle= parseInt(o.name.slice(9));
             view.getScene().getObjectByName(o.name).material.color= {r:0.3,g:1,b:0.3}
         }else{
@@ -356,6 +368,11 @@ function Yoch_coupe( o ){
         delete oldColor
         info.clear()
     }
+    if(0==o.name.indexOf("recTangle") && chaR(activeChar).thRowing){
+        oldColor= "undefined"==typeof oldColor? {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}: oldColor
+        view.getScene().getObjectByName(o.name).material.color= {r:0.5,g:0.5,b:0.5}
+        active_recTangle= null;
+    }
 }
 function Yoch_ben( o ){
     if(option.currentCar!="ben")return
@@ -365,7 +382,7 @@ function Yoch_ben( o ){
             info.show(recTangle_info[parseInt(o.name.slice(9))])
         }
         oldColor= {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}
-        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion){
+        if(parseInt(o.name.slice(9)) == chaR(activeChar).posiTion && !chaR(activeChar).thRowing){
             active_recTangle= parseInt(o.name.slice(9));
             view.getScene().getObjectByName(o.name).material.color= {r:0.3,g:1,b:0.3}
         }else{
@@ -377,6 +394,11 @@ function Yoch_ben( o ){
         active_recTangle= null;
         delete oldColor
         info.clear()
+    }
+    if(0==o.name.indexOf("recTangle") && chaR(activeChar).thRowing){
+        oldColor= "undefined"==typeof oldColor? {recT:view.getScene().getObjectByName(o.name), col: view.getScene().getObjectByName(o.name).material.color}: oldColor
+        view.getScene().getObjectByName(o.name).material.color= {r:0.5,g:0.5,b:0.5}
+        active_recTangle= null;
     }
 }
 function afterLoad () {
@@ -458,7 +480,6 @@ function applyOption () {
 window.activeChar= 0
 window.active_recTangle= null
 function changeChar (x) {
-
     follow( CARS[x].name )
     physic.drive (CARS[x].name);
     option.currentCar= CARS[x].name
@@ -468,10 +489,10 @@ function changeChar (x) {
 
 
 window.char= {
-    c0: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, caR: "fordM"},
-    c1: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, caR: "vaz"},
-    c2: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, caR: "coupe"},
-    c3: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, caR: "ben"}
+    c0: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, thRowing: false, caR: "fordM"},
+    c1: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, thRowing: false, caR: "vaz"},
+    c2: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, thRowing: false, caR: "coupe"},
+    c3: {posiTion: -1, adquisiTions:[], currencies: 1000, skip: 0, thRowing: false, caR: "ben"}
 }
 window.chaR= function(N){
     return Object.values(char)[N]
@@ -503,6 +524,7 @@ dices.throw= function(no_luck__experienced_method){if(no_luck__experienced_metho
 
 dices.inform= function(th){
     Throw= th;
+    chaR(activeChar).thRowing= false
     alert(`${th[0]} y ${th[1]} (${(th[0] + th[1])})`)    
 }
 dices.disable_throw= function(){
@@ -513,5 +535,12 @@ dices.disable_throw= function(){
 dices.setThrower= function(T){
     $("#Throw").removeAttr("disabled")
     activeChar= T;
+    chaR(activeChar).thRowing= true
+    if("undefined"!=typeof oldColor){
+        oldColor.recT.material.color= oldColor.col;
+        active_recTangle= null;
+        delete oldColor
+        info.clear()
+    }
     $("#Throw").text(`Tirar los dados. (${chaR(T).name})`)
 }

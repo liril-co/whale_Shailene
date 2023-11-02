@@ -41,9 +41,16 @@ window.onload = init;
 
 $("#Throw").on("click", function(){
     if(!$("#Throw").attr("disabled")){
+        if("undefined"!=typeof oldColor){
+            oldColor.recT.material.color= oldColor.col;
+            active_recTangle= null;
+            delete oldColor
+            info.clear()
+        }
         dices.inform(dices.throw())
         $("#Throw").blur()
         dices.disable_throw()
+        chaR(activeChar).previys_posiTion= chaR(activeChar).posiTion
         while(chaR(activeChar).posiTion + (Throw[0] + Throw[1]) > 47 ){
             chaR(activeChar).posiTion -= 48
         }
@@ -65,7 +72,7 @@ $("#acquire").on("click", function(){
                 }
                 nextChar= nextChar + 1 <= 3? nextChar + 1: 0
             }
-            if("undefined"!==typeof chaR(nextChar).desterrado){
+            if("undefined"!=typeof chaR(nextChar).desterrado){
                 physic.matrix( [ { name:CARS[activeChar].name, pos: [ 32.5, 1, -45.5], noVelocity:true } ] )
                 delete chaR(nextChar).desterrado
             }
@@ -87,8 +94,8 @@ $("#refuse").on("click", function(){
                 }
                 nextChar= nextChar + 1 <= 3? nextChar + 1: 0
             }
-            if("undefined"!==typeof chaR(nextChar).desterrado){
-                physic.matrix( [ { name:CARS[activeChar].name, pos: [ 32.5, 1, -45.5], noVelocity:true } ] )
+            if("undefined"!=typeof chaR(nextChar).desterrado){
+                physic.matrix( [ { name:CARS[nextChar].name, pos: [ 32.5, 1, -45.5], noVelocity:true } ] )
                 delete chaR(nextChar).desterrado
             }
             changeChar(nextChar)
@@ -102,48 +109,7 @@ window.burger= {}
 window.info= {}
 window.dices= {}
 window.Throw= []
-window.chaR= function(N){
-    return Object.values(char)[N]
-}
-display.log= function(t){
-    document.querySelector("display log").innerHTML= `${t}`
-}
-burger.write= function(t){
-    document.querySelector(".burger span").innerHTML= `${t}`
-}
 
-info.clear= function(){
-    $("display img").attr("src", "")
-    display.log('')
-    burger.write('')
-}
-info.show= function(i){
-    if("undefined"==typeof i){
-        info.clear()
-        return
-    }
-    $("display img").attr("src", i.pic)
-    display.log(i.title)
-    burger.write(i.description)
-}
-
-
-dices.throw= function(no_luck__experienced_method){if(no_luck__experienced_method || !!!no_luck__experienced_method){return [parseInt(Math.random() * 6) + 1, parseInt(Math.random() * 6) + 1]}}
-
-dices.inform= function(th){
-    Throw= th;
-    alert(`${th[0]} y ${th[1]} (${(th[0] + th[1])})`)    
-}
-dices.disable_throw= function(){
-    $("#Throw").attr("disabled", "true")
-    $("#Throw").text(`Tirar los dados`)
-    $("#Throw").blur()
-}
-dices.setThrower= function(T){
-    $("#Throw").removeAttr("disabled")
-    activeChar= T;
-    $("#Throw").text(`Tirar los dados. (${chaR(T).name})`)
-}
 
 </script>
 </body>
